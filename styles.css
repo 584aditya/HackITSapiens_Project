@@ -10,6 +10,19 @@
     box-sizing: border-box;
 }
 
+.nav-links{
+    position: absolute;
+    margin-left: 15%;
+}
+.nav-links .fa-xmark {
+    display: none;
+  }
+  
+nav .fa-bars {
+    display: none;
+  }
+
+
 .back-video{
     width: 100vw;
     height: 100vh;
@@ -154,14 +167,20 @@ nav ul ul li,.years{
     color: #000;
   }
 
-  .Aboutus{
+  .Courses_Offered{
     background: #fff;
     color: #000;
   }
 
-  .Aboutus p{
+  .Courses_Offered h1{
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .Courses_Offered p{
     padding: 20px 8%;
   }
+
 
   .user-pic{
     width: 40px;
@@ -206,9 +225,52 @@ nav #bars-ico{
 .footer{
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding-top: 5%;
+  padding-top: 2%;
 }
+
+.footer h4{
+  font-size: 90%;
+  text-align: center;
+  margin-top: 1%;
+}
+.footer hr{
+  line-height: 10px;
+}
+
+.footer-cont{
+  text-align: center;
+}
+
+.use-cont{
+  text-align: left;
+  position: relative;
+}
+
+.use-cont h4{
+  margin-left: -75%;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+
+.use-cont ul li{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.use-cont ul li a{
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.use-cont ul li a:hover{
+  border-top: 1px solid #ffff00;
+  border-bottom: 1px solid #ffff00;
+  margin-left: 1%;
+}
+
 
 .s-t-t{
   z-index: 1;
@@ -306,11 +368,151 @@ nav #bars-ico{
   display: block;
 }
 
+.container{
+  height: 350px;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  display: grid;
+  place-items: center;
+}
+
+.slide-posts{
+  display: flex;
+  width: calc(250px * 16);
+  animation: scroll 15s linear infinite;
+}
+
+.slide-posts:hover{
+  animation: none;
+}
+
+@keyframes scroll{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-250px*8));
+  }
+}
+/* B.Tech Card */
+.Btech-card {
+  background: linear-gradient(rgba(4, 9, 30, 0.7),rgba(4, 9, 30, 0.7));
+  position: relative;
+  margin: 20px 0 0 25px;
+  width: 350px;
+  height: 400px;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px black;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.Btech-card .Btech-img {
+  position: relative;
+  overflow: hidden;
+}
+.Btech-card .Btech-img::before {
+  content: "";
+  position: absolute;
+  bottom: -220px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(4, 9, 30, 0.6) 50%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.Btech-card:hover .Btech-img::before {
+  bottom: 0px;
+}
+.Btech-card .B.tech-img img {
+  width: 100%;
+}
+
+.B.tech-card:hover .Btech-img img {
+  transform: translateY(-10px);
+  filter: blur(1.2px);
+}
+
+.Btech-card .Btech-det {
+  position: absolute;
+  width: 100%;
+  bottom: -190px;
+  right: 0;
+  z-index: 1;
+  padding: 20px;
+  transition: 0.5s;
+}
+.Btech-card:hover .Btech-det {
+  bottom: 40px;
+}
+.Btech-card .Btech-det h2 {
+  font-size: 35px;
+}
+.Btech-card .Btech-det h3 {
+  text-align: left;
+}
+
+.Btech-card .Btech-det h5 {
+  font-size: 15px;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 30px;
+  line-height: 20px;
+}
+
+.wrapper{
+  display: flex;
+  animation: slide 5s infinite;
+}
+
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(0);
+  }
+  30%{
+    transform: translateX(-100%);
+  }
+  50%{
+    transform: translateX(-100%);
+  }
+  55%{
+    transform: translateX(-200%);
+  }
+  75%{
+    transform: translateX(-200%);
+  }
+  80%{
+    transform: translateX(-300%);
+  }
+  100%{
+    transform: translateX(-100deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 600px){
 nav ul{
   margin-top: 100px;
   margin-right: 100%;
-  display: flex;
+  display: block;
 }
 
 #mp-play{
@@ -363,4 +565,22 @@ nav ul{
 nav ul{
   display: none;
 }
+
+.nav-links .fa-xmark {
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  nav .fa-bars {
+    display: block;
+    color: #fff;
+    margin: 5px;
+    margin-right: 6%;
+    margin-bottom: 4%;
+    font-size: 25px;
+    cursor: pointer;
+  }
 }
